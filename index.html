@@ -111,9 +111,9 @@
     </div>
     <!-- Actions -->
     <div class="flex items-center gap-4">
-      <button id="lang-toggle" onclick="toggleLang()" class="hidden md:flex items-center gap-1 text-[#9e9e9e] hover:text-[#631313] transition-all text-xs font-bold tracking-widest uppercase">
+      <!-- <button id="lang-toggle" onclick="toggleLang()" class="hidden md:flex items-center gap-1 text-[#9e9e9e] hover:text-[#631313] transition-all text-xs font-bold tracking-widest uppercase">
         <span id="lang-label">ES</span> <span class="opacity-40 mx-1">|</span> <span id="lang-other">EN</span>
-      </button>
+      </button> -->
       <a href="#contacto" class="bg-[#bb3b43] text-white px-5 md:px-7 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide hover:bg-[#631313] transition-all shadow-sm" data-i18n="nav-contactar">
         Contactar
       </a>
@@ -779,7 +779,7 @@ async function submitEmail() {
     if (!res.ok) throw new Error('Server error');
     document.getElementById('email-form').innerHTML =
       '<p class="text-[#febdc6] font-bold text-sm tracking-wide">' +
-      (currentLang === 'es' ? '¡Bienvenida a la comunidad! 🌸 Revisa tu correo.' : 'Welcome to the community! 🌸 Check your inbox.') +
+      (currentLang === 'es' ? '¡Bienvenida a la comunidad! 🌸 ¡Me pondré en contacto pronto!.' : 'Welcome to the community! 🌸 I'll contact you soon!.') +
       '</p>';
   } catch(e) {
     btn.disabled = false;
