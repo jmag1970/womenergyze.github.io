@@ -520,65 +520,73 @@
     <span class="text-[#febdc6] font-bold tracking-[0.3em] text-xs uppercase block mb-5" data-i18n="email-eyebrow">Únete a Nuestra Comunidad</span>
     <h2 class="text-4xl md:text-5xl font-black text-white mb-5 uppercase leading-tight">Transforma Tu Vida<br/>con Nosotras</h2>
     <p class="text-white/70 font-light mb-10 leading-relaxed">
-      Si estás listo para cambiar tu vida, ingresa tu correo electrónico a continuación para que nos pongamos en contacto contigo. Sin spam.
+      Si estás lista para cambiar tu vida, ingresa tu correo electrónico a continuación para que nos pongamos en contacto contigo. Sin spam.
     </p>
-		<div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" id="email-form">
-		  <input type="email" id="signup-email" placeholder="Tu correo electrónico"
-			data-i18n-placeholder="email-placeholder"
-			class="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-sm text-white placeholder:text-white/40 focus:ring-2 focus:ring-[#febdc6] focus:bg-white/15 transition-all outline-none"/>
-		  <button onclick="submitEmail()"
-			class="bg-[#bb3b43] text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-[#631313] transition-all uppercase"
-			data-i18n="email-btn" id="signup-btn">
-			Quiero Unirme
-		  </button>
-		</div>
-		<p id="signup-msg" class="text-white/60 text-xs mt-5 hidden"></p>
-		<p class="text-white/30 text-xs mt-3" data-i18n="email-fine">Sin spam. Solo contenido que transforma.</p>
-
-		<script>
-		async function submitEmail() {
-		  const email = document.getElementById('signup-email').value.trim();
-		  const btn = document.getElementById('signup-btn');
-		  const msg = document.getElementById('signup-msg');
-
-		  if (!email || !email.includes('@')) {
-			msg.textContent = '⚠ Por favor ingresa un correo válido.';
-			msg.classList.remove('hidden');
-			return;
-		  }
-
-		  btn.disabled = true;
-		  btn.textContent = '...';
-
-		  try {
-			await fetch('YOUR_N8N_WEBHOOK_URL', {
-			  method: 'POST',
-			  headers: { 'Content-Type': 'application/json' },
-			  body: JSON.stringify({ email, source: 'womenergyze-landing', lang: currentLang })
-			});
-			document.getElementById('email-form').innerHTML =
-			  '<p class="text-[#febdc6] font-bold text-sm">¡Bienvenida a la comunidad! 🌸 </p>';
-		  } catch(e) {
-			btn.disabled = false;
-			btn.textContent = 'Quiero Unirme';
-			msg.textContent = 'Algo salió mal. Intenta de nuevo.';
-			msg.classList.remove('hidden');
-		  }
-		}
-		</script>
-	
-	
-	
-	
-	<div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-      <input type="email" placeholder="Tu correo electrónico" data-i18n-placeholder="email-placeholder" class="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-sm text-white placeholder:text-white/40 focus:ring-2 focus:ring-[#febdc6] focus:bg-white/15 transition-all outline-none"/>
-      <button class="bg-[#bb3b43] text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-[#631313] transition-all uppercase" data-i18n="email-btn">
+    <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" id="email-form">
+      <input
+        type="email"
+        id="signup-email"
+        placeholder="Tu correo electrónico"
+        data-i18n-placeholder="email-placeholder"
+        class="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-sm text-white placeholder:text-white/40 focus:ring-2 focus:ring-[#febdc6] focus:bg-white/15 transition-all outline-none"
+      />
+      <button
+        id="signup-btn"
+        onclick="submitEmail()"
+        class="bg-[#bb3b43] text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-[#631313] transition-all uppercase"
+        data-i18n="email-btn">
         Quiero Unirme
       </button>
     </div>
-    <p class="text-white/30 text-xs mt-5" data-i18n="email-fine">Sin spam. Solo contenido que transforma.</p>
+    <p id="signup-msg" class="text-white/60 text-xs mt-4 hidden"></p>
+    <p class="text-white/30 text-xs mt-3" data-i18n="email-fine">Sin spam. Solo contenido que transforma.</p>
   </div>
 </section>
+
+	<script>
+	async function submitEmail() {
+	  const email = document.getElementById('signup-email').value.trim();
+	  const btn   = document.getElementById('signup-btn');
+	  const msg   = document.getElementById('signup-msg');
+
+	  // Basic validation
+	  if (!email || !email.includes('@')) {
+		msg.textContent = '⚠ Por favor ingresa un correo válido.';
+		msg.classList.remove('hidden');
+		return;
+	  }
+
+	  // Loading state
+	  btn.disabled = true;
+	  btn.textContent = '...';
+	  msg.classList.add('hidden');
+
+	  try {
+		const res = await fetch('https://n8n.bizlogix.cloud/webhook-test/3d6b33fe-a0de-4b14-9ded-ae91924ec020', {
+		  method: 'POST',
+		  headers: { 'Content-Type': 'application/json' },
+		  body: JSON.stringify({
+			email,
+			source: 'womenergyze-landing',
+			lang: typeof currentLang !== 'undefined' ? currentLang : 'es',
+			timestamp: new Date().toISOString()
+		  })
+		});
+
+		if (!res.ok) throw new Error('Server error');
+
+		// Success — replace form with confirmation message
+		document.getElementById('email-form').innerHTML =
+		  '<p class="text-[#febdc6] font-bold text-sm tracking-wide">¡Bienvenida a la comunidad! 🌸</p>';
+
+	  } catch(e) {
+		btn.disabled = false;
+		btn.textContent = 'Quiero Unirme';
+		msg.textContent = 'Algo salió mal. Por favor intenta de nuevo.';
+		msg.classList.remove('hidden');
+	  }
+	}
+	</script>
 
 </main>
 
