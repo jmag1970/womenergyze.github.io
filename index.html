@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WOMENERGYZE | by Myriam Magda — Coaching Holístico para Mujeres</title>
+<meta name="description" content="Womenergyze by Myriam Magda. Programas de coaching holístico en nutrición, mentalidad y estilo de vida para mujeres Latinas. USPTO Trademark Pending."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "brand-burgundy":  "#631313",
+          "brand-rose":      "#bb3b43",
+          "brand-blush":     "#febdc6",
+          "brand-soft-rose": "#efc7cc",
+          "brand-light-blush":"#ffe3ea",
+          "brand-cream":     "#f0eae2",
+          "brand-charcoal":  "#424141",
+          "brand-gray":      "#9e9e9e",
+          "primary":         "#631313",
+          "secondary":       "#bb3b43",
+          "surface":         "#fff8f0",
+          "on-surface":      "#1d1b17",
+          "on-surface-variant": "#564240",
+          "on-background":   "#1d1b17",
+          "surface-container": "#f3ede5",
+          "primary-container": "#631313",
+        },
+        fontFamily: {
+          "sans":     ["Montserrat", "sans-serif"],
+          "headline": ["Montserrat", "sans-serif"],
+          "body":     ["Montserrat", "sans-serif"],
+        },
+        borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style type="text/tailwindcss">
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .editorial-line {
+    height: 1px;
+    background: currentColor;
+    opacity: 0.2;
+  }
+  .hero-img-placeholder {
+    background: linear-gradient(135deg, #efc7cc 0%, #febdc6 50%, #f0eae2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-placeholder {
+    background: linear-gradient(145deg, #efc7cc 0%, #f0eae2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bb3b43;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.7s ease both;
+  }
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+</style>
+</head>
+<body class="bg-white font-body text-on-surface antialiased">
+
+<!-- ═══════════════════════════════════ NAV ═══════════════════════════════════ -->
+<header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-black/5">
+  <nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
+    <!-- Brand -->
+    <div class="flex flex-col leading-none">
+      <span class="text-xl md:text-2xl font-black tracking-tight text-[#631313] uppercase">WOMENERGYZE™</span>
+      <span class="text-[10px] text-[#9e9e9e] font-medium tracking-[0.2em] uppercase">by Myriam Magda</span>
+    </div>
+    <!-- Links -->
+    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+      <span class="w-5 h-0.5 bg-[#631313] block transition-all" id="menu-bar1"></span>
+      <span class="w-5 h-0.5 bg-[#631313] block transition-all" id="menu-bar2"></span>
+      <span class="w-5 h-0.5 bg-[#631313] block transition-all" id="menu-bar3"></span>
+    </button>
+    <div class="hidden md:flex items-center gap-8" id="desktop-nav">
+      <a class="text-[#631313] text-sm font-semibold tracking-wide border-b-2 border-[#bb3b43] pb-0.5" href="#servicios" data-i18n="nav-servicios">Servicios</a>
+      <a class="text-[#424141] text-sm font-medium hover:text-[#631313] transition-colors" href="#programas" data-i18n="nav-programas">Programas</a>
+      <a class="text-[#424141] text-sm font-medium hover:text-[#631313] transition-colors" href="#sobre-mi" data-i18n="nav-sobre">Sobre Mí</a>
+      <a class="text-[#424141] text-sm font-medium hover:text-[#631313] transition-colors" href="#testimonios" data-i18n="nav-testimonios">Testimonios</a>
+    </div>
+    <!-- Actions -->
+    <div class="flex items-center gap-4">
+      <button id="lang-toggle" onclick="toggleLang()" class="hidden md:flex items-center gap-1 text-[#9e9e9e] hover:text-[#631313] transition-all text-xs font-bold tracking-widest uppercase">
+        <span id="lang-label">ES</span> <span class="opacity-40 mx-1">|</span> <span id="lang-other">EN</span>
+      </button>
+      <a href="#contacto" class="bg-[#bb3b43] text-white px-5 md:px-7 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-wide hover:bg-[#631313] transition-all shadow-sm" data-i18n="nav-contactar">
+        Contactar
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- Mobile nav drawer -->
+<div id="mobile-nav" class="hidden fixed top-[65px] left-0 right-0 z-40 bg-white border-b border-[#efc7cc] shadow-lg md:hidden">
+  <div class="flex flex-col px-6 py-4 gap-4">
+    <a class="text-[#631313] text-sm font-semibold py-2 border-b border-[#ffe3ea]" href="#servicios" onclick="closeMobileMenu()" data-i18n="nav-servicios">Servicios</a>
+    <a class="text-[#424141] text-sm font-medium py-2 border-b border-[#ffe3ea]" href="#programas" onclick="closeMobileMenu()" data-i18n="nav-programas">Programas</a>
+    <a class="text-[#424141] text-sm font-medium py-2 border-b border-[#ffe3ea]" href="#sobre-mi" onclick="closeMobileMenu()" data-i18n="nav-sobre">Sobre Mí</a>
+    <a class="text-[#424141] text-sm font-medium py-2 border-b border-[#ffe3ea]" href="#testimonios" onclick="closeMobileMenu()" data-i18n="nav-testimonios">Testimonios</a>
+    <div class="flex items-center gap-4 pt-2">
+      <a href="#contacto" class="bg-[#bb3b43] text-white px-6 py-2.5 rounded-full text-sm font-bold tracking-wide hover:bg-[#631313] transition-all" onclick="closeMobileMenu()" data-i18n="nav-contactar">Contactar</a>
+      <button onclick="toggleLang(); closeMobileMenu();" class="text-[#9e9e9e] text-xs font-bold tracking-widest uppercase">
+        <span id="mobile-lang-label">ES</span> | <span id="mobile-lang-other">EN</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 z-0" style="background: linear-gradient(120deg, #febdc6 0%, #f0eae2 55%, #ffe3ea 100%);"></div>
+  <!-- Decorative circle -->
+  <div class="absolute right-0 top-0 w-[55vw] h-[55vw] rounded-full opacity-20 z-0" style="background: radial-gradient(circle, #bb3b43, transparent 70%); transform: translate(20%, -20%);"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 w-full py-10 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+    <!-- Text -->
+    <div class="animate-fade-in-up">
+      <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-6" data-i18n="hero-eyebrow">Womenergyze™ · by Myriam Magda</span>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-[#000000] leading-[1.05] mb-6 uppercase tracking-tight">
+        Transforma<br/>Tu Vida<br/><span class="text-[#631313]">Desde Adentro</span>
+      </h1>
+      <p class="text-lg text-[#424141] mb-10 leading-relaxed max-w-lg font-light">
+        <span data-i18n="hero-sub">Coaching holístico en nutrición, mentalidad y estilo de vida — diseñado para la mujer Latina que está lista para el cambio real.</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
+        <a href="#programas" class="bg-[#bb3b43] text-white px-10 py-4 rounded-full font-bold text-xs tracking-widest hover:bg-[#631313] transition-all shadow-md uppercase text-center" data-i18n="hero-cta1">
+          Ver Programas
+        </a>
+        <a href="#sobre-mi" class="border-2 border-[#631313] text-[#631313] px-10 py-4 rounded-full font-bold text-xs tracking-widest hover:bg-[#631313] hover:text-white transition-all uppercase text-center" data-i18n="hero-cta2">
+          Conoce a Myriam
+        </a>
+      </div>
+    </div>
+    <!-- Photo placeholder -->
+    <div class="relative animate-fade-in-up delay-300">
+      <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl hero-img-placeholder">
+        <div class="photo-placeholder w-full h-full">
+          <div>
+       
+			<img src="https://cdn.shopify.com/s/files/1/0656/5353/8890/files/myriam1.jpg?v=1774834963">
+			
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ CREDIBILITY BAR ═══════════════════════════════════ -->
+<section class="bg-[#1d1b17] py-7">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 text-white/70 text-[11px] font-bold uppercase tracking-[0.25em]">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#bb3b43]">workspace_premium</span data-i18n="cred-1">
+        Coaching Certificado
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#bb3b43]">groups</span data-i18n="cred-2">
+        +17000 Mujeres Transformadas
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-[#bb3b43]">language</span data-i18n="cred-3">
+        Programas 100% Online
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SERVICES ═══════════════════════════════════ -->
+<section id="servicios" class="py-16 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+      <!-- Left sticky label -->
+      <div class="md:col-span-4 md:sticky top-32 h-fit">
+        <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-5" data-i18n="svc-eyebrow">Metodología</span>
+        <h2 class="text-5xl font-black text-[#631313] mb-6 leading-tight uppercase" data-i18n="svc-h2">Nuestros Servicios</h2>
+        <p class="text-[#424141] font-light leading-relaxed mb-6">
+          Un enfoque integrativo que combina ciencia, psicología y nutrición para una transformación real y duradera.
+        </p>
+        <div class="editorial-line w-full mb-6 text-[#631313]"></div>
+        <p class="text-[#9e9e9e] text-sm font-light">Cada servicio está diseñado específicamente para las necesidades únicas de la mujer Latina moderna.</p>
+      </div>
+      <!-- Service cards -->
+      <div class="md:col-span-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 sm:[grid-auto-rows:1fr] gap-6">
+          <div class="bg-[#ffe3ea] p-6 md:p-10 rounded-2xl border border-black/5 hover:bg-white hover:shadow-lg transition-all duration-500 group flex flex-col">
+            <span class="material-symbols-outlined text-4xl text-[#bb3b43] mb-6 block">potted_plant</span>
+            <h3 class="text-xl font-black text-[#631313] mb-3 uppercase" data-es="Nutrición Holística" data-en="Holistic Nutrition">Nutrición Holística</h3>
+            <p class="text-[#424141] leading-relaxed mb-6 font-light text-sm flex-1" data-es="Coaching 1:1, programas grupales y sistemas de hábitos para transformar tu relación con la comida y tu cuerpo." data-en="1:1 coaching, group programs and habit systems to transform your relationship with food and your body.">Coaching 1:1, programas grupales y sistemas de hábitos para transformar tu relación con la comida y tu cuerpo.</p>
+            <a class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto" href="#programas">
+              <span data-es="Ver más" data-en="Learn more">Ver más</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <div class="bg-[#ffe3ea] p-6 md:p-10 rounded-2xl border border-black/5 hover:bg-white hover:shadow-lg transition-all duration-500 group flex flex-col">
+            <span class="material-symbols-outlined text-4xl text-[#bb3b43] mb-6 block">psychology</span>
+            <h3 class="text-xl font-black text-[#631313] mb-3 uppercase" data-es="Mentalidad &amp; Desarrollo" data-en="Mindset &amp; Development">Mentalidad &amp; Desarrollo</h3>
+            <p class="text-[#424141] leading-relaxed mb-6 font-light text-sm flex-1" data-es="Resiliencia emocional, autoconfianza y sistemas de metas para construir tu mejor versión desde adentro." data-en="Emotional resilience, self-confidence and goal systems to build your best self from the inside out.">Resiliencia emocional, autoconfianza y sistemas de metas para construir tu mejor versión desde adentro.</p>
+            <a class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto" href="#programas">
+              <span data-es="Ver más" data-en="Learn more">Ver más</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <div class="bg-[#ffe3ea] p-6 md:p-10 rounded-2xl border border-black/5 hover:bg-white hover:shadow-lg transition-all duration-500 group flex flex-col">
+            <span class="material-symbols-outlined text-4xl text-[#bb3b43] mb-6 block">bolt</span>
+            <h3 class="text-xl font-black text-[#631313] mb-3 uppercase" data-es="Fitness &amp; Estilo de Vida" data-en="Fitness &amp; Lifestyle">Fitness &amp; Estilo de Vida</h3>
+            <p class="text-[#424141] leading-relaxed mb-6 font-light text-sm flex-1" data-es="Coaching de fitness online, educación corporal y entrenamiento de hábitos sostenibles adaptados a tu ciclo." data-en="Online fitness coaching, body education and sustainable habit training adapted to your cycle.">Coaching de fitness online, educación corporal y entrenamiento de hábitos sostenibles adaptados a tu ciclo.</p>
+            <a class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto" href="#programas">
+              <span data-es="Ver más" data-en="Learn more">Ver más</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <div class="bg-[#ffe3ea] p-6 md:p-10 rounded-2xl border border-black/5 hover:bg-white hover:shadow-lg transition-all duration-500 group flex flex-col">
+            <span class="material-symbols-outlined text-4xl text-[#bb3b43] mb-6 block">school</span>
+            <h3 class="text-xl font-black text-[#631313] mb-3 uppercase" data-es="Cursos &amp; Educación" data-en="Courses &amp; Education">Cursos &amp; Educación</h3>
+            <p class="text-[#424141] leading-relaxed mb-6 font-light text-sm flex-1" data-es="Programas digitales auto-dirigidos, masterclasses y academias de bienestar para aprender a tu ritmo." data-en="Self-directed digital programs, masterclasses and wellness academies to learn at your own pace.">Programas digitales auto-dirigidos, masterclasses y academias de bienestar para aprender a tu ritmo.</p>
+            <a class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto" href="#programas">
+              <span data-es="Ver más" data-en="Learn more">Ver más</span> <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PROGRAMS ═══════════════════════════════════ -->
+<section id="programas" class="py-16 md:py-28 bg-[#f0eae2]">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-4" data-i18n="prg-eyebrow">Transformación Real</span>
+      <h2 class="text-4xl md:text-5xl font-black text-[#631313] uppercase tracking-tight mb-4" data-i18n="prg-h2">Nuestros Programas</h2>
+      <p class="text-[#424141] font-light max-w-xl mx-auto">Cada programa está diseñado para guiarte en una etapa específica de tu transformación.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- HormonalMENTE -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col">
+        <div class="h-2 bg-[#bb3b43]"></div>
+        <div class="p-6 md:p-10 flex flex-col flex-1">
+          <span class="inline-block bg-[#febdc6] text-[#631313] font-black px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.15em] mb-6 self-start">Programa Estrella</span>
+          <div class="w-12 h-12 bg-[#ffe3ea] rounded-xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#bb3b43] text-2xl">favorite</span>
+          </div>
+          <h3 class="text-2xl font-black text-[#631313] mb-3">HormonalMENTE</h3>
+          <p class="text-[#424141] font-light text-sm leading-relaxed mb-6 flex-1">El programa definitivo de transformación hormonal. Combina nutrición cíclica, mentalidad y hábitos para recuperar el control total de tu energía, emociones y cuerpo.</p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Online</span>
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Grupal</span>
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">8 Semanas</span>
+          </div>
+          <a href="https://nutrinenas.myshopify.com/products/hormonalmente" class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto">
+            Ver programa <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Coaching 1:1 -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col">
+        <div class="h-2 bg-[#631313]"></div>
+        <div class="p-6 md:p-10 flex flex-col flex-1">
+          <span class="inline-block bg-[#f0eae2] text-[#631313] font-black px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.15em] mb-6 self-start">Personalizado</span>
+          <div class="w-12 h-12 bg-[#ffe3ea] rounded-xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#bb3b43] text-2xl">person_celebrate</span>
+          </div>
+          <h3 class="text-2xl font-black text-[#631313] mb-3 uppercase">Coaching 1:1</h3>
+          <p class="text-[#424141] font-light text-sm leading-relaxed mb-6 flex-1">Acompañamiento totalmente personalizado con Myriam. Diseñamos juntas un plan adaptado a tu historia, tus metas y tu estilo de vida único.</p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Online</span>
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Individual</span>
+            <span class="bg-[#f0eae2] text-[#631313] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Flexible</span>
+          </div>
+          <a href="https://nutrinenas.myshopify.com/products/mantenimiento" class="inline-flex items-center gap-2 font-bold text-xs tracking-widest uppercase text-[#bb3b43] group-hover:gap-4 transition-all mt-auto">
+            Ver programa <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      <!-- Coming soon -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group flex flex-col">
+        <div class="h-2 bg-[#efc7cc]"></div>
+        <div class="p-6 md:p-10 flex flex-col flex-1 items-center text-center justify-center">
+          <div class="w-12 h-12 bg-[#ffe3ea] rounded-xl flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[#bb3b43] text-2xl">hourglass_top</span>
+          </div>
+          <span class="inline-block bg-[#ffe3ea] text-[#bb3b43] font-black px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.15em] mb-4">Próximamente</span>
+          <h3 class="text-2xl font-black text-[#631313] mb-3 uppercase">Nuevo Programa</h3>
+          <p class="text-[#424141] font-light text-sm leading-relaxed mb-8">Nuevos programas en desarrollo. Únete a la lista de espera y sé la primera en enterarte de su lanzamiento.</p>
+          <a href="#comunidad" class="bg-[#ffe3ea] text-[#631313] px-8 py-3 rounded-full font-bold text-xs tracking-widest uppercase hover:bg-[#efc7cc] transition-all">
+            Notifícame
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ HORMONAL MENTE FEATURE ═══════════════════════════════════ -->
+<section class="py-16 md:py-28 bg-white border-y border-black/5 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-0 items-stretch bg-[#f3ede5] rounded-3xl overflow-hidden shadow-lg">
+      <!-- Image -->
+      <div class="md:col-span-5 min-h-[500px] photo-placeholder">
+        <div>
+          <div class="text-5xl mb-3 opacity-30">🌸</div>
+          <p>Imagen del programa<br/>HormonalMENTE</p>
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="md:col-span-7 p-8 md:p-20 bg-white flex flex-col justify-center">
+        <span class="inline-block bg-[#febdc6] text-[#631313] font-black px-4 py-1.5 rounded-full text-[10px] uppercase tracking-[0.2em] mb-6 self-start">Programa Estrella</span>
+        <h2 class="text-5xl md:text-6xl font-black text-[#631313] mb-6 tracking-tight">Hormonal<span class="text-[#bb3b43]">MENTE</span></h2>
+        <p class="text-lg text-[#424141] mb-10 leading-relaxed font-light">
+          El programa definitivo para hackear tu sistema hormonal y recuperar el control total de tus emociones, energía y cuerpo. Ciencia + mentalidad + comunidad.
+        </p>
+        <ul class="space-y-4 mb-10">
+          <li class="flex items-start gap-4 text-sm font-medium text-[#424141]">
+            <span class="material-symbols-outlined text-[#bb3b43] text-lg mt-0.5 flex-shrink-0">check_circle</span>
+            Protocolos de nutrición cíclica hormonal
+          </li>
+          <li class="flex items-start gap-4 text-sm font-medium text-[#424141]">
+            <span class="material-symbols-outlined text-[#bb3b43] text-lg mt-0.5 flex-shrink-0">check_circle</span>
+            Módulos de bio-hacking emocional y mentalidad
+          </li>
+          <li class="flex items-start gap-4 text-sm font-medium text-[#424141]">
+            <span class="material-symbols-outlined text-[#bb3b43] text-lg mt-0.5 flex-shrink-0">check_circle</span>
+            Comunidad privada y acompañamiento grupal exclusivo
+          </li>
+          <li class="flex items-start gap-4 text-sm font-medium text-[#424141]">
+            <span class="material-symbols-outlined text-[#bb3b43] text-lg mt-0.5 flex-shrink-0">check_circle</span>
+            Suplementos recomendados disponibles en NutriNenas
+          </li>
+        </ul>
+        <a href="#" class="bg-[#bb3b43] text-white px-10 py-4 rounded-full font-black text-xs tracking-widest hover:bg-[#631313] transition-all shadow-lg uppercase self-start">
+          Quiero Saber Más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ MORE SERVICES ═══════════════════════════════════ -->
+<section class="py-20 bg-[#efc7cc]/30">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <h2 class="text-2xl font-black text-[#631313] mb-14 text-center uppercase tracking-[0.3em]" data-i18n="more-h2">Más Formas de Crecer</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+      <div class="flex flex-col items-center gap-4 group cursor-pointer">
+        <div class="w-18 h-18 w-[72px] h-[72px] bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-[#bb3b43] group-hover:text-white transition-all text-[#bb3b43]">
+          <span class="material-symbols-outlined text-3xl">school</span>
+        </div>
+        <span class="font-bold text-[#631313] text-xs uppercase tracking-widest text-center">Cursos Digitales</span>
+      </div>
+      <div class="flex flex-col items-center gap-4 group cursor-pointer">
+        <div class="w-[72px] h-[72px] bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-[#bb3b43] group-hover:text-white transition-all text-[#bb3b43]">
+          <span class="material-symbols-outlined text-3xl">event_note</span>
+        </div>
+        <span class="font-bold text-[#631313] text-xs uppercase tracking-widest text-center">Talleres & Seminarios</span>
+      </div>
+      <div class="flex flex-col items-center gap-4 group cursor-pointer">
+        <div class="w-[72px] h-[72px] bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-[#bb3b43] group-hover:text-white transition-all text-[#bb3b43]">
+          <span class="material-symbols-outlined text-3xl">card_membership</span>
+        </div>
+        <span class="font-bold text-[#631313] text-xs uppercase tracking-widest text-center">Membresías</span>
+      </div>
+      <div class="flex flex-col items-center gap-4 group cursor-pointer">
+        <div class="w-[72px] h-[72px] bg-white rounded-full flex items-center justify-center shadow-md group-hover:bg-[#bb3b43] group-hover:text-white transition-all text-[#bb3b43]">
+          <span class="material-symbols-outlined text-3xl">co_present</span>
+        </div>
+        <span class="font-bold text-[#631313] text-xs uppercase tracking-widest text-center">Conferencias</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
+<section id="sobre-mi" class="py-16 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
+    <!-- Photo -->
+    <div class="relative">
+      <div class="aspect-[4/5] relative rounded-3xl overflow-hidden shadow-2xl photo-placeholder grayscale hover:grayscale-0 transition-all duration-1000">
+        <div class="w-full h-full flex flex-col items-center justify-center">
+          <img src="https://cdn.shopify.com/s/files/1/0656/5353/8890/files/myriam2.jpg?v=1774834963">
+        </div>
+      </div>
+      <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-[#febdc6] opacity-20 -z-10 rounded-full blur-2xl"></div>
+    </div>
+    <!-- Text -->
+    <div>
+      <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-5" data-i18n="about-eyebrow">La Mente Detrás</span>
+      <h2 class="text-5xl font-black text-[#631313] mb-8 leading-tight uppercase">Conoce a<br/>Myriam</h2>
+      <p class="text-lg text-[#424141] font-light leading-relaxed mb-8">
+        Con más de una década de experiencia en nutrición y coaching, Myriam Magda ha ayudado a cientos de mujeres a reconciliarse con su cuerpo y alcanzar su máximo potencial — a través de un enfoque basado en ciencia, empatía y comunidad.
+      </p>
+      <p class="text-[#424141] font-light leading-relaxed mb-10 text-sm">
+        Fundó Womenergyze para llevar programas de transformación real a mujeres Latinas: combinando nutrición hormonal, mentalidad y estilo de vida en un solo sistema poderoso.
+      </p>
+      <div class="flex flex-wrap gap-3 mb-10">
+        <span class="bg-[#f0eae2] text-[#631313] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">Nutricionista Certificada</span>
+        <span class="bg-[#f0eae2] text-[#631313] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">Coach de Vida</span>
+        <span class="bg-[#f0eae2] text-[#631313] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">Especialista Hormonal</span>
+        <span class="bg-[#f0eae2] text-[#631313] px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider">Educadora en Wellness</span>
+      </div>
+      <blockquote class="italic text-[#424141] leading-relaxed border-l-4 border-[#bb3b43] pl-6 mb-10 text-lg font-light">
+        "Mi misión es empoderar a la mujer para que entienda que su biología no es su enemiga, sino su mayor aliada para el éxito."
+      </blockquote>
+      <a href="#" class="text-[#631313] font-bold text-xs tracking-[0.2em] border-b-2 border-[#bb3b43] pb-1 hover:text-[#bb3b43] transition-colors uppercase">
+        Leer Mi Historia Completa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TESTIMONIALS ═══════════════════════════════════ -->
+<section id="testimonios" class="py-28 bg-[#fff8f0]">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="text-center mb-16">
+      <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-4" data-i18n="test-eyebrow">Resultados Reales</span>
+      <h2 class="text-4xl font-black text-[#631313] uppercase tracking-tight" data-i18n="test-h2">Lo Que Dicen Nuestras Mujeres</h2>
+      <div class="editorial-line w-20 mx-auto mt-6 text-[#631313]"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 md:p-10 rounded-2xl border border-black/5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all">
+        <div class="flex text-[#febdc6] mb-6 gap-1">
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+        </div>
+        <p class="text-[#424141] font-light italic leading-relaxed mb-8 text-base">"HormonalMENTE cambió mi relación con la comida y mi energía. Ahora entiendo mis ciclos y me siento más fuerte que nunca."</p>
+        <div class="editorial-line w-10 mb-6 text-[#631313]"></div>
+        <h4 class="font-black text-[#631313] tracking-wider text-sm uppercase">Andrea R.</h4>
+        <span class="text-[10px] text-[#9e9e9e] uppercase tracking-widest mt-1">Emprendedora</span>
+      </div>
+      <div class="bg-white p-6 md:p-10 rounded-2xl border border-black/5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all">
+        <div class="flex text-[#febdc6] mb-6 gap-1">
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+        </div>
+        <p class="text-[#424141] font-light italic leading-relaxed mb-8 text-base">"La calidez de Myriam es única. No solo es ciencia, es una conexión real que te motiva a seguir adelante todos los días."</p>
+        <div class="editorial-line w-10 mb-6 text-[#631313]"></div>
+        <h4 class="font-black text-[#631313] tracking-wider text-sm uppercase">Laura V.</h4>
+        <span class="text-[10px] text-[#9e9e9e] uppercase tracking-widest mt-1">Abogada</span>
+      </div>
+      <div class="bg-white p-6 md:p-10 rounded-2xl border border-black/5 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all">
+        <div class="flex text-[#febdc6] mb-6 gap-1">
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+          <span class="material-symbols-outlined text-sm filled">star</span>
+        </div>
+        <p class="text-[#424141] font-light italic leading-relaxed mb-8 text-base">"Por fin encontré un método que se adapta a mi vida y no al revés. Mis migrañas desaparecieron y mi ánimo subió al 100%."</p>
+        <div class="editorial-line w-10 mb-6 text-[#631313]"></div>
+        <h4 class="font-black text-[#631313] tracking-wider text-sm uppercase">Mariana G.</h4>
+        <span class="text-[10px] text-[#9e9e9e] uppercase tracking-widest mt-1">Madre & Ejecutiva</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ SUPPLEMENT COMPANION ═══════════════════════════════════ -->
+<!--<section class="py-16 bg-[#ffe3ea] border-y border-[#efc7cc]">
+  <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
+    <span class="text-[#bb3b43] font-bold tracking-[0.3em] text-xs uppercase block mb-3" data-i18n="supp-eyebrow">Complementa Tu Programa</span>
+    <h3 class="text-2xl font-black text-[#631313] mb-3 uppercase" data-i18n="supp-h3">Suplementos que potencian tus resultados</h3>
+    <p class="text-[#424141] font-light mb-6 max-w-xl mx-auto text-sm leading-relaxed">
+      Muchos de nuestros programas recomiendan suplementos específicos para apoyar tu transformación. Descubre la línea NutriNenas — formulada especialmente para mujeres activas.
+    </p>
+    <a href="https://www.nutrinenas.com/collections/suplementos" target="_blank" class="inline-flex items-center gap-2 text-[#631313] font-bold text-xs tracking-[0.2em] uppercase border-b-2 border-[#bb3b43] pb-1 hover:text-[#bb3b43] transition-colors">
+      Explorar suplementos NutriNenas <span class="material-symbols-outlined text-sm">open_in_new</span>
+    </a>
+  </div>
+</section>-->
+
+<!-- ═══════════════════════════════════ EMAIL CAPTURE ═══════════════════════════════════ -->
+<section id="comunidad" class="py-16 md:py-24 bg-[#631313]">
+  <div class="max-w-3xl mx-auto px-4 md:px-8 text-center">
+    <span class="text-[#febdc6] font-bold tracking-[0.3em] text-xs uppercase block mb-5" data-i18n="email-eyebrow">Únete a Nuestra Comunidad</span>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-5 uppercase leading-tight">Transforma Tu Vida<br/>con Nosotras</h2>
+    <p class="text-white/70 font-light mb-10 leading-relaxed">
+      Recibe contenido exclusivo, tips de bienestar hormonal y acceso anticipado a nuevos programas. Sin spam — solo contenido que transforma.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+      <input type="email" placeholder="Tu correo electrónico" data-i18n-placeholder="email-placeholder" class="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-4 text-sm text-white placeholder:text-white/40 focus:ring-2 focus:ring-[#febdc6] focus:bg-white/15 transition-all outline-none"/>
+      <button class="bg-[#bb3b43] text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-[#631313] transition-all uppercase" data-i18n="email-btn">
+        Quiero Unirme
+      </button>
+    </div>
+    <p class="text-white/30 text-xs mt-5" data-i18n="email-fine">Sin spam. Solo contenido que transforma.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer id="contacto" class="bg-[#1d1b17] text-white/80">
+  <div class="w-full pt-20 pb-12 flex flex-col md:flex-row justify-between items-start px-4 md:px-8 max-w-7xl mx-auto gap-8 md:gap-16">
+    <!-- Brand -->
+    <div class="max-w-sm">
+      <div class="mb-1">
+        <div class="text-2xl font-black text-white tracking-tight uppercase">WOMENERGYZE™</div>
+        <div class="text-xs text-[#9e9e9e] tracking-[0.2em] uppercase mb-6">by Myriam Magda</div>
+      </div>
+      <p class="text-white/50 font-light leading-relaxed mb-8 text-sm">
+        Tu comunidad digital para el bienestar hormonal y mental. Empoderando a la mujer Latina desde la nutrición y el coaching consciente.
+      </p>
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#bb3b43] hover:border-[#bb3b43] transition-all text-xs font-bold">IG</a>
+        <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#bb3b43] hover:border-[#bb3b43] transition-all text-xs font-bold">TK</a>
+        <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#bb3b43] hover:border-[#bb3b43] transition-all text-xs font-bold">YT</a>
+        <a href="#" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-[#bb3b43] hover:border-[#bb3b43] transition-all text-xs font-bold">FB</a>
+      </div>
+    </div>
+    <!-- Nav links -->
+    <div class="grid grid-cols-2 gap-16">
+      <div>
+        <h5 class="text-[11px] font-black uppercase tracking-[0.3em] text-white mb-6">Explora</h5>
+        <ul class="space-y-4">
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#servicios">Servicios</a></li>
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#programas">Programas</a></li>
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#sobre-mi">Sobre Mí</a></li>
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#testimonios">Testimonios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-[11px] font-black uppercase tracking-[0.3em] text-white mb-6">Legal</h5>
+        <ul class="space-y-4">
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#">Privacidad</a></li>
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#">Términos</a></li>
+          <li><a class="text-white/50 text-sm hover:text-white transition-all font-light" href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Newsletter -->
+    <div class="max-w-xs">
+      <h5 class="text-[11px] font-black uppercase tracking-[0.3em] text-white mb-6">Newsletter</h5>
+      <p class="text-white/40 text-xs mb-5 font-light">Recibe consejos semanales sobre bienestar y nutrición hormonal.</p>
+      <div class="flex gap-2">
+        <input class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:ring-1 focus:ring-[#bb3b43] focus:bg-white/10 transition-all outline-none w-full text-white placeholder:text-white/30" placeholder="Tu email" type="email"/>
+        <button class="bg-[#bb3b43] text-white p-3 rounded-lg hover:bg-[#631313] transition-all shadow-lg flex-shrink-0">
+          <span class="material-symbols-outlined text-sm">send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom bar -->
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="text-white/30 text-[11px] font-medium tracking-wide">© 2025 WOMENERGYZE™ POR LIC. MYRIAM MAGDA. TODOS LOS DERECHOS RESERVADOS. USPTO TRADEMARK PENDING.</p>
+    <div class="flex items-center gap-8 text-white/30 text-[11px] font-bold tracking-widest uppercase">
+      <a class="hover:text-white transition-colors" href="#">Instagram</a>
+      <a class="hover:text-white transition-colors" href="#">TikTok</a>
+      <a class="hover:text-white transition-colors" href="#">YouTube</a>
+      <a class="hover:text-white transition-colors" href="#">Facebook</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ─── i18n translations ────────────────────────────────────────────────────────
+const translations = {
+  es: {
+    // Meta
+    "page-title": "WOMENERGYZE™ | by Myriam Magda — Coaching Holístico para Mujeres",
+    // Nav
+    "nav-servicios": "Servicios", "nav-programas": "Programas",
+    "nav-sobre": "Sobre Mí", "nav-testimonios": "Testimonios",
+    "nav-contactar": "Contactar",
+    // Hero
+    "hero-eyebrow": "Womenergyze™ · by Myriam Magda",
+    "hero-h1a": "Transforma", "hero-h1b": "Tu Vida", "hero-h1c": "Desde Adentro",
+    "hero-sub": "Coaching holístico en nutrición, mentalidad y estilo de vida — diseñado para la mujer Latina que está lista para el cambio real.",
+    "hero-cta1": "Ver Programas", "hero-cta2": "Conoce a Myriam",
+    // Credibility bar
+    "cred-1": "Coaching Certificado", "cred-2": "+500 Mujeres Transformadas", "cred-3": "Programas 100% Online",
+    // Services section
+    "svc-eyebrow": "Metodología", "svc-h2": "Nuestros Servicios",
+    "svc-desc": "Un enfoque integrativo que combina ciencia, psicología y nutrición para una transformación real y duradera.",
+    "svc-note": "Cada servicio está diseñado específicamente para las necesidades únicas de la mujer Latina moderna.",
+    // Programs
+    "prg-eyebrow": "Transformación Real", "prg-h2": "Nuestros Programas",
+    "prg-sub": "Cada programa está diseñado para guiarte en una etapa específica de tu transformación.",
+    "prg-badge1": "Programa Estrella", "prg-badge2": "Personalizado", "prg-badge3": "Próximamente",
+    "prg-1-title": "HormonalMENTE",
+    "prg-1-desc": "El programa definitivo de transformación hormonal. Combina nutrición cíclica, mentalidad y hábitos para recuperar el control total de tu energía, emociones y cuerpo.",
+    "prg-2-title": "Coaching 1:1",
+    "prg-2-desc": "Acompañamiento totalmente personalizado con Myriam. Diseñamos juntas un plan adaptado a tu historia, tus metas y tu estilo de vida único.",
+    "prg-3-title": "Nuevo Programa",
+    "prg-3-desc": "Nuevos programas en desarrollo. Únete a la lista de espera y sé la primera en enterarte de su lanzamiento.",
+    "prg-cta": "Ver programa →", "prg-notify": "Notifícame",
+    // HormonalMENTE feature
+    "feat-badge": "Programa Estrella",
+    "feat-desc": "El programa definitivo para hackear tu sistema hormonal y recuperar el control total de tus emociones, energía y cuerpo. Ciencia + mentalidad + comunidad.",
+    "feat-li1": "Protocolos de nutrición cíclica hormonal",
+    "feat-li2": "Módulos de bio-hacking emocional y mentalidad",
+    "feat-li3": "Comunidad privada y acompañamiento grupal exclusivo",
+    "feat-li4": "Suplementos recomendados disponibles en NutriNenas",
+    "feat-cta": "Quiero Saber Más",
+    // More services
+    "more-h2": "Más Formas de Crecer",
+    "more-1": "Cursos Digitales", "more-2": "Talleres & Seminarios", "more-3": "Membresías", "more-4": "Conferencias",
+    // About
+    "about-eyebrow": "La Mente Detrás", "about-h2": "Conoce a Myriam",
+    "about-p1": "Con más de una década de experiencia en nutrición y coaching, Myriam Magda ha ayudado a cientos de mujeres a reconciliarse con su cuerpo y alcanzar su máximo potencial — a través de un enfoque basado en ciencia, empatía y comunidad.",
+    "about-p2": "Fundó Womenergyze para llevar programas de transformación real a mujeres Latinas: combinando nutrición hormonal, mentalidad y estilo de vida en un solo sistema poderoso.",
+    "about-quote": ""Mi misión es empoderar a la mujer para que entienda que su biología no es su enemiga, sino su mayor aliada para el éxito."",
+    "about-cta": "Leer Mi Historia Completa",
+    // Testimonials
+    "test-eyebrow": "Resultados Reales", "test-h2": "Lo Que Dicen Nuestras Mujeres",
+    "test-1": ""HormonalMENTE cambió mi relación con la comida y mi energía. Ahora entiendo mis ciclos y me siento más fuerte que nunca."",
+    "test-2": ""La calidez de Myriam es única. No solo es ciencia, es una conexión real que te motiva a seguir adelante todos los días."",
+    "test-3": ""Por fin encontré un método que se adapta a mi vida y no al revés. Mis migrañas desaparecieron y mi ánimo subió al 100%."",
+    // Supplement
+    "supp-eyebrow": "Complementa Tu Programa",
+    "supp-h3": "Suplementos que potencian tus resultados",
+    "supp-p": "Muchos de nuestros programas recomiendan suplementos específicos para apoyar tu transformación. Descubre la línea NutriNenas — formulada especialmente para mujeres activas.",
+    "supp-cta": "Explorar suplementos NutriNenas",
+    // Email capture
+    "email-eyebrow": "Únete a Nuestra Comunidad",
+    "email-h2a": "Transforma Tu Vida", "email-h2b": "con Nosotras",
+    "email-sub": "Recibe contenido exclusivo, tips de bienestar hormonal y acceso anticipado a nuevos programas. Sin spam — solo contenido que transforma.",
+    "email-placeholder": "Tu correo electrónico", "email-btn": "Quiero Unirme",
+    "email-fine": "Sin spam. Solo contenido que transforma.",
+    // Footer
+    "footer-tagline": "Tu comunidad digital para el bienestar hormonal y mental. Empoderando a la mujer Latina desde la nutrición y el coaching consciente.",
+    "footer-explore": "Explora", "footer-legal": "Legal", "footer-newsletter": "Newsletter",
+    "footer-newsletter-sub": "Recibe consejos semanales sobre bienestar y nutrición hormonal.",
+    "footer-placeholder": "Tu email",
+    "footer-copy": "© 2025 WOMENERGYZE POR LIC. MYRIAM MAGDA. TODOS LOS DERECHOS RESERVADOS. USPTO TRADEMARK PENDING."
+  },
+  en: {
+    "page-title": "WOMENERGYZE | by Myriam Magda — Holistic Coaching for Women",
+    "nav-servicios": "Services", "nav-programas": "Programs",
+    "nav-sobre": "About Me", "nav-testimonios": "Testimonials",
+    "nav-contactar": "Contact",
+    "hero-eyebrow": "Womenergyze · by Myriam Magda",
+    "hero-h1a": "Transform", "hero-h1b": "Your Life", "hero-h1c": "From Within",
+    "hero-sub": "Holistic coaching in nutrition, mindset and lifestyle — designed for the Latina woman who is ready for real change.",
+    "hero-cta1": "View Programs", "hero-cta2": "Meet Myriam",
+    "cred-1": "Certified Coaching", "cred-2": "+500 Women Transformed", "cred-3": "100% Online Programs",
+    "svc-eyebrow": "Methodology", "svc-h2": "Our Services",
+    "svc-desc": "An integrative approach combining science, psychology and nutrition for real, lasting transformation.",
+    "svc-note": "Each service is specifically designed for the unique needs of the modern Latina woman.",
+    "prg-eyebrow": "Real Transformation", "prg-h2": "Our Programs",
+    "prg-sub": "Each program is designed to guide you through a specific stage of your transformation.",
+    "prg-badge1": "Featured Program", "prg-badge2": "Personalized", "prg-badge3": "Coming Soon",
+    "prg-1-title": "HormonalMINDS",
+    "prg-1-desc": "The ultimate hormonal transformation program. Combines cyclical nutrition, mindset and habits to regain full control of your energy, emotions and body.",
+    "prg-2-title": "1:1 Coaching",
+    "prg-2-desc": "Fully personalized support with Myriam. We design together a plan tailored to your history, goals and unique lifestyle.",
+    "prg-3-title": "New Program",
+    "prg-3-desc": "New programs in development. Join the waitlist and be the first to know about the launch.",
+    "prg-cta": "View program →", "prg-notify": "Notify Me",
+    "feat-badge": "Featured Program",
+    "feat-desc": "The ultimate program to hack your hormonal system and regain full control of your emotions, energy and body. Science + mindset + community.",
+    "feat-li1": "Cyclical hormonal nutrition protocols",
+    "feat-li2": "Emotional bio-hacking and mindset modules",
+    "feat-li3": "Private community and exclusive group support",
+    "feat-li4": "Recommended supplements available at NutriNenas",
+    "feat-cta": "I Want to Know More",
+    "more-h2": "More Ways to Grow",
+    "more-1": "Digital Courses", "more-2": "Workshops & Seminars", "more-3": "Memberships", "more-4": "Conferences",
+    "about-eyebrow": "The Mind Behind", "about-h2": "Meet Myriam",
+    "about-p1": "With over a decade of experience in nutrition and coaching, Myriam Magda has helped hundreds of women reconnect with their bodies and reach their full potential — through an approach based on science, empathy and community.",
+    "about-p2": "She founded Womenergyze to bring real transformation programs to Latina women: combining hormonal nutrition, mindset and lifestyle into one powerful system.",
+    "about-quote": ""My mission is to empower women to understand that their biology is not their enemy, but their greatest ally for success."",
+    "about-cta": "Read My Full Story",
+    "test-eyebrow": "Real Results", "test-h2": "What Our Women Say",
+    "test-1": ""HormonalMENTE changed my relationship with food and my energy. I now understand my cycles and feel stronger than ever."",
+    "test-2": ""Myriam's warmth is unique. It's not just science — it's a real connection that motivates you to keep going every day."",
+    "test-3": ""I finally found a method that adapts to my life, not the other way around. My migraines disappeared and my mood went up 100%."",
+    "supp-eyebrow": "Complement Your Program",
+    "supp-h3": "Supplements that enhance your results",
+    "supp-p": "Many of our programs recommend specific supplements to support your transformation. Discover the NutriNenas line — formulated especially for active women.",
+    "supp-cta": "Explore NutriNenas supplements",
+    "email-eyebrow": "Join Our Community",
+    "email-h2a": "Transform Your Life", "email-h2b": "With Us",
+    "email-sub": "Receive exclusive content, hormonal wellness tips and early access to new programs. No spam — just content that transforms.",
+    "email-placeholder": "Your email address", "email-btn": "I Want to Join",
+    "email-fine": "No spam. Only content that transforms.",
+    "footer-tagline": "Your digital sanctuary for hormonal and mental wellness. Empowering Latina women through conscious nutrition and coaching.",
+    "footer-explore": "Explore", "footer-legal": "Legal", "footer-newsletter": "Newsletter",
+    "footer-newsletter-sub": "Receive weekly wellness and hormonal nutrition tips.",
+    "footer-placeholder": "Your email",
+    "footer-copy": "© 2025 WOMENERGYZE BY LIC. MYRIAM MAGDA. ALL RIGHTS RESERVED. USPTO TRADEMARK PENDING."
+  }
+};
+
+let currentLang = 'es';
+
+function toggleLang() {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  applyLang(currentLang);
+  // Update toggle button labels
+  document.getElementById('lang-label').textContent = currentLang.toUpperCase();
+  document.getElementById('lang-other').textContent = currentLang === 'es' ? 'EN' : 'ES';
+  // Update html lang attr
+  document.documentElement.lang = currentLang;
+}
+
+function applyLang(lang) {
+  const t = translations[lang];
+  // Page title
+  document.title = t['page-title'];
+  // All elements with data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+  // Placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+  // data-es / data-en attributes on service cards
+  document.querySelectorAll('[data-es]').forEach(el => {
+    el.textContent = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+  });
+}
+</script>
+
+<script>
+function toggleMobileMenu() {
+  const nav = document.getElementById('mobile-nav');
+  nav.classList.toggle('hidden');
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-nav').classList.add('hidden');
+}
+// Patch toggleLang to also update mobile toggle labels
+const _origToggleLang = toggleLang;
+toggleLang = function() {
+  _origToggleLang();
+  const ml = document.getElementById('mobile-lang-label');
+  const mo = document.getElementById('mobile-lang-other');
+  if (ml) ml.textContent = (currentLang).toUpperCase();
+  if (mo) mo.textContent = currentLang === 'es' ? 'EN' : 'ES';
+}
+</script>
+</body>
+</html>
