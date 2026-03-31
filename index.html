@@ -562,7 +562,7 @@
 	  msg.classList.add('hidden');
 
 	  try {
-		const res = await fetch('https://n8n.bizlogix.cloud/webhook-test/3d6b33fe-a0de-4b14-9ded-ae91924ec020', {
+		const res = await fetch('https://n8n.bizlogix.cloud/webhook/3d6b33fe-a0de-4b14-9ded-ae91924ec020', {
 		  method: 'POST',
 		  headers: { 'Content-Type': 'application/json' },
 		  body: JSON.stringify({
@@ -577,7 +577,7 @@
 
 		// Success — replace form with confirmation message
 		document.getElementById('email-form').innerHTML =
-		  '<p class="text-[#febdc6] font-bold text-sm tracking-wide">¡Bienvenida a la comunidad! 🌸</p>';
+		  '<p class="text-[#febdc6] font-bold text-sm tracking-wide">¡Bienvenida a la comunidad! 🌸 ¡Me pondré en contacto pronto!</p>';
 
 	  } catch(e) {
 		btn.disabled = false;
